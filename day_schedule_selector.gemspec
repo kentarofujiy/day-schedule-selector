@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["chung-yi@artsymail.com"]
 
   spec.summary       = "A jQuery plugin to render a weekly schedule and allow selecting time slots in each day."
-  spec.description   = "A jQuery plugin to render a weekly schedule and allow selecting time slots in each day."
+  spec.description   = "A jQuery plugin to render a weekly schedule and allow selecting time slots in each day. I am updating this data so it wordks"
   spec.homepage      = "https://github.com/artsy/day-schedule-selector"
   spec.license       = "MIT"
 
