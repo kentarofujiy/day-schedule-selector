@@ -169,15 +169,15 @@
         }
 
         // End of selection (I am the last one :) .)
-        if (isSlotSelected($(this)) && !!start && $(this).is($(this).closest('tbody').find(".time-slot[data-day='" + v + "']:last"))) {
-          end = secondsSinceMidnightToHhmm(
-            hhmmToSecondsSinceMidnight($(this).data('time')) + plugin.options.interval * 60);
-        }
+        // if (isSlotSelected($(this)) && !!start && $(this).is($(this).closest('tbody').find(".time-slot[data-day='" + v + "']:last"))) {
+        //   end = secondsSinceMidnightToHhmm(
+        //     hhmmToSecondsSinceMidnight($(this).data('time')) + plugin.options.interval * 60);
+        // }
 
-        if (!!end) { selections[v].push([start, end]); start = end = false; }
+        // if (!!end) { selections[v].push([start, end]); start = end = false; }
       });
-    })
-    return selections;
+    });
+     return selections;
   };
 
   /**

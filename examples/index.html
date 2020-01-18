@@ -10,7 +10,9 @@
 </head>
 
 <body>
-
+ <p id="text1">here</p>
+  <p id="text2">here</p>
+   <p id="text3">here</p>
   <div id="day-schedule"></div>
 
   <script src="vendor/javascripts/jquery-1.11.2.js"></script>
@@ -26,10 +28,36 @@
         */
       });
       $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
-        console.log(selected);
+        var ken = selected;
+        var lastone = selected[selected.length-1];
+          $("#text1").text(ken[0].attributes[1].value);
+          $("#text2").text(lastone.attributes[1].value);
+          $("#text3").text(ken[0].attributes[2].value);
+          
+          var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://64.225.8.81:8001/events",
+  "method": "POST",
+  "headers": {
+    "origin": "http://64.225.8.81:8001",
+    "upgrade-insecure-requests": "1",
+    "content-type": "application/x-www-form-urlencoded",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    "cache-control": "no-cache",
+    "postman-token": "f217e58f-8fdb-23cd-ae3e-03bf15793f68"
+  },
+  "data": {}
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
       })
       $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
-        '0': [['09:30', '11:00'], ['13:00', '16:30']]
+        '0': [['09:30', '11:00'], ['13:00', '16:30']],
+        '1': [['11:30', '13:00'], ['15:00', '16:30']]
       });
     })($);
   </script>
